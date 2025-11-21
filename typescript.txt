@@ -1,0 +1,29 @@
+Topics
+
+1.- Introduction
+2.- Setting up develop enviroment
+3.- Create first Typescript program
+4.- Configure compiler
+5.- Debuggin applications
+
+* what is Typescript
+* why do we need it
+* differences from vanilla javascript
+
+BENEFITS
+
+* Static typing
+* Code completion
+* Refactoring
+* Shorthand notations
+
+DRAWBAKCS
+
+* Compilation | Transpilation
+* Discipline Code
+
+TERMINAL COMMANDS
+
+* tsc _file name.ts_: compile into js code
+* tsc --init: configuration file
+
