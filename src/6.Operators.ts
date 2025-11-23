@@ -22,12 +22,12 @@ const remainder: number = 11 % 3;  // 2
 /*
 AND (&&): Returns true if both conditions are true.
 OR (||): Returns true if at least one of the conditions is true.
-NOT (!): Reverses the truthiness of the condition.
+NOT (!): Reverses the truthiness of the condition. (if not true/if not false)
 */
 
 const isHome = true;
 const inPajamas = false;
-const wantsToEat = false;
+const wantsToEat = true;
 const isBored = false;
 
 // I should go outside if I am home, not in my pajamas, and 
