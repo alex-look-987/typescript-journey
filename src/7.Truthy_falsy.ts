@@ -33,3 +33,27 @@ const numberOfOrangesOrPears = oranges || pears;
 // will be set to true because bananas is greater than zero
 
 const atLeastOne = !!bananas || !!apples;
+
+// Nullish Coalescing operator (??)
+
+/*
+TypeScript allows to return a "fallback" value if the left side of the operator is either null or undefined. 
+OR operator || but will choose the right value only if the left side is either null or undefined, 
+whereas the || operator will choose the left side only if the value is truthy.
+*/
+
+
+// will be set to 0 since apples is a number
+const applesOrOranges = apples ?? oranges;
+
+// will be set to 3 since apples is falsy
+const numberOfApplesOrOranges = apples || oranges;
+
+
+const a = null;
+const b = undefined;
+const c = 7;
+
+const first = a ?? b ?? c
+
+console.log(first)
