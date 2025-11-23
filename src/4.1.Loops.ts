@@ -15,7 +15,7 @@
 */
 
 // TRADITIONAL ONES
-for(let i = 10; i < 15; i++) 
+for(let i = 10; i <= 15; i++) 
 {
     // This statement is repeated
     console.log(i);
