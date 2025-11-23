@@ -48,7 +48,7 @@ for (let entry of someArray)
         console.log(entry); // 1, "string", false
     }
     
-    // ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| //
+// ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| //
     
 // FOR IN LOOP
 // iterator through the variable/object | returns index positions
@@ -77,4 +77,29 @@ for (let pet in pets) {
 }
 for (let pet of pets) {
   console.log(pet); // "Cat", "Dog", "Hamster"
+}
+
+// FOR LOOP VARIATIONS
+
+// Reductional Iteration}
+
+console.log('Reductional Iteration');
+
+for(let i = 20; i >= 10; i--) 
+{
+    console.log(i);
+}
+
+console.log('2 step reduction');
+
+for(let i = 20; i >= 0; i-=2) 
+{
+    console.log(i);
+}
+
+console.log('2 step sum');
+
+for(let i = 0; i <= 4; i+=2) 
+{
+    console.log(i);
 }
