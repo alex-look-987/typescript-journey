@@ -16,5 +16,7 @@ console.log(getStringLength(data));
 
 // Example 2
 
+/*
 let phone = document.getElementById('phone') as HTMLInputElement;
 let phoneAlt = <HTMLInputElement> document.getElementById('phone');
+*/
