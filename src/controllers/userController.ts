@@ -1,16 +1,7 @@
 import { Request, Response } from "express";
-
-interface User {
-    id: number;
-    name: string;
-    email: string;
-}
+import {getAllUsers} from "../services/userServices";
 
 export const getUsers = (req: Request, res: Response) => {
-    const users: User[] = [
-        { id: 1, name: 'Jane Doe', email: 'jane@example.com' },
-        { id: 2, name: 'John Smith', email: 'john@example.com' }
-    ];
-
+    const users = getAllUsers();
     res.json(users);
 };
