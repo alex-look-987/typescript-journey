@@ -161,3 +161,19 @@ console.log('customers birthday', customer?.birthday?.getFullYear())
 let log: any = null
 
 log?.('a');
+
+
+// The Never Type
+
+// types that never occur
+
+function reject (message: string): never {
+    throw new Error(message);
+}
+
+function processEvents(): never {
+    while (true){
+        // read message from a queue
+    }
+}
+
