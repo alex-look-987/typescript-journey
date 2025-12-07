@@ -50,10 +50,27 @@ const applesOrOranges = apples ?? oranges;
 const numberOfApplesOrOranges = apples || oranges;
 
 
-const a = null;
+let a = null;
 const b = undefined;
 const c = 7;
 
 const first = a ?? b ?? c
 
 console.log(first)
+
+a = 0
+
+const test = a ?? c
+
+console.log(test)
+
+/*
+|| cualquier falsy: quiero que si el usuario ingresa "", false, 0, etc. se use el fallback
+
+?? cuando sí quieres aceptar 0, false o "" como valores válidos
+
+* configuraciones numéricas
+* flags booleanos
+* valores de entrada donde 0 es válido (paginación, índices, precios, cantidades)
+* argumentos opcionales
+*/
