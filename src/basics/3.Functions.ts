@@ -25,3 +25,22 @@ console.log(func_add)
 console.log(func_sum)
 console.log(func_add_)
 console.log(result)
+
+// Rest Parameters
+
+function printNames (firstName: string, ...allTheRest: string[]): string {
+    return firstName + " " +  allTheRest.join(" ")
+}
+
+let names = printNames("alex", "look", "987")
+
+console.log(names)
+
+// Function Overloading
+
+function addValues (val1: number, val2: number): number;
+
+function addValues (val1: string, val2: string): string;
+
+function addValues (a: any, b: any): any {return a + b}
+
