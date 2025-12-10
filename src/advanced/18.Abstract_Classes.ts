@@ -56,3 +56,27 @@ const myRect: Rectangle = new Rectangle(4, 7);
 
 console.log(myCircle.area());
 console.log(myRect.area());
+
+class Point {
+    constructor(private _x?: number, private _y?: number) {}
+
+    draw() {console.log(this._x, this._y)}
+
+    get x(): number | undefined {
+        return this._x
+        // return this.x ?? 0; Nullish coalescing for default value
+    }
+    
+    get y() {return this._y}
+
+    set x(value: number) {
+        if (value == 0)
+            throw new Error ("value cannot be 0.")
+
+        this._x = value
+        }
+}
+
+let point = new Point(12)
+
+point.draw()
