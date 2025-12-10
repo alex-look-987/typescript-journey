@@ -43,3 +43,42 @@ myDog.speak();
 let myCat: Animal = new Animal('puffy');
 
 myCat.speak()
+
+class Person {
+    constructor (protected id: number, private name: string) {
+        }
+}
+
+class UsCitizen extends Person {
+    constructor (id: number, name: string, private ssn: number) {
+        super(id, name);
+    }
+
+    rename (newId: number) {
+        this.id = newId 
+    }
+}
+
+const Junior = new UsCitizen(143, "Alex", 3414)
+console.log(Junior)
+
+// Class Initialazers
+
+class AnimalTest {
+    especie = "generico";
+}
+
+class Perro extends AnimalTest {
+    raza = "labrador";
+}
+
+// Composition instead of Inherentance 
+
+class AnimalComp {
+    constructor(public especie: string) {}
+}
+
+class Dogg {
+    base = new AnimalComp("perro");
+    // no existe super, solo composición
+}
