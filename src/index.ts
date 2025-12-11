@@ -1,5 +1,5 @@
 import app from './app';
-import dotenv from 'dotenv';
+import * as dotenv from "dotenv";
 import swaggerUi from 'swagger-ui-express';
 import { swaggerSpec } from './swagger';
 
@@ -7,7 +7,11 @@ import { swaggerSpec } from './swagger';
 dotenv.config()
 
 // PORT
-const PORT: string | number = process.env.PORT || 3000;
+if (!process.env.PORT) {
+    console.log("No port value specified")
+}
+
+const PORT = parseInt(process.env.PORT as string, 10)
 const URL: string = `http://localhost:${PORT}`
 
 // Swagger UI

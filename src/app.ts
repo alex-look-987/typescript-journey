@@ -1,15 +1,20 @@
-import open from 'open';
+import cors from "cors";
+import helmet from "helmet";
 import express from 'express';
 import userRoutes from './routes/userRoutes';
 import { logger } from './middleware/logger';
 import { Application, Request, Response } from 'express';
 
 const app: Application = express()
-const PORT = process.env.PORT || 3000;
 
 // Middlewares
-app.use(logger);
-app.use(express.json());
+app.use(logger)
+
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
+
+app.use(cors())
+app.use(helmet())
 
 // Routes
 app.use('/api', userRoutes);
