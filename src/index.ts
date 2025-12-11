@@ -1,25 +1,23 @@
-import express from 'express';
-import userRoutes from './routes/userRoutes';
-import { logger } from './middleware/logger';
-import { Application, Request, Response } from 'express';
+import app from './app';
+import dotenv from 'dotenv';
+import swaggerUi from 'swagger-ui-express';
+import { swaggerSpec } from './swagger';
 
-const app: Application = express()
-const PORT = process.env.PORT || 3000;
+// Env variables
+dotenv.config()
 
-app.use(logger);
+// PORT
+const PORT: string | number = process.env.PORT || 3000;
+const URL: string = `http://localhost:${PORT}`
 
-app.use(express.json());
+// Swagger UI
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 
-app.use('/api', userRoutes);
-
-app.get('/', (req: Request, res: Response) => {
-    res.send('API is up and running!');
-});
+// Initialize Server
 
 
 app.listen(PORT, () => {
-    console.log('Server is listeing on port:', PORT) 
+    console.log('Server is listeing on port:', PORT)
+    console.log(`API URL: ${URL}`)
+    console.log(`For Docs visit ${URL}/api-docs`)
 });
-
-
-
