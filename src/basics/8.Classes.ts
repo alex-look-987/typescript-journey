@@ -73,12 +73,70 @@ class Perro extends AnimalTest {
 }
 
 // Composition instead of Inherentance 
-
 class AnimalComp {
     constructor(public especie: string) {}
 }
 
-class Dogg {
+class Doog {
     base = new AnimalComp("perro");
     // no existe super, solo composición
 }
+
+// Getter / Setters
+class Car {
+    // Instances
+    static NUM_OF_WHEELS = 4
+
+    constructor (private make: string, private model: string) {
+    }
+
+    set carMake (value: string) {
+        this.make = value
+    }
+
+    get carMake () {
+        return this.make
+    }
+
+    static carStats(mile: number) {
+        // Car.NUM_OF_WHEELS
+        return {mileage: mile, type: 'Hybrid'}
+    }
+}
+
+const acura = new Car('Acura', 'TL')
+
+// Set
+acura.carMake = 'etdete'
+
+// Get
+let brand: string = acura.carMake
+
+// Instances
+console.log(Car.NUM_OF_WHEELS)
+console.log(Car.carStats(10))
+
+// Abstract Class
+
+/* 
+Abstract classes are well most used as templates for root types (entities) in real life
+- cars, animals, persons, computers, buildings, etc, etc,
+*/
+
+abstract class Animall {
+    
+    constructor(private name: string) {}
+
+    abstract printSound(sound: string): void
+}
+
+class Dogg extends Animall {
+    printSound(sound: string): void {
+        // throw new Error("Method not Implemented.")
+        console.log(sound)
+    }
+}
+
+const blaki =  new Dogg('blaki')
+
+blaki.printSound("Barking!")
