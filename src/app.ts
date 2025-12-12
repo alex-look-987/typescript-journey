@@ -4,7 +4,6 @@ import { logger } from './middleware/logger';
 import { Application, Request, Response } from 'express';
 
 const app: Application = express()
-const PORT = process.env.PORT || 3000;
 
 // Middlewares
 app.use(logger);

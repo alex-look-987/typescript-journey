@@ -14,8 +14,6 @@ const URL: string = `http://localhost:${PORT}`
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 
 // Initialize Server
-
-
 app.listen(PORT, () => {
     console.log('Server is listeing on port:', PORT)
     console.log(`API URL: ${URL}`)
