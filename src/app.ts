@@ -10,7 +10,7 @@ app.use(logger);
 app.use(express.json());
 
 // Routes
-app.use('/', userRoutes);
+app.use(userRoutes);
 
 // Main Endpoint
 app.get('/', (req: Request, res: Response) => {
@@ -18,7 +18,8 @@ app.get('/', (req: Request, res: Response) => {
         message: "API is up and running!",
         menu: {
             users: '/users',
-            docs: '/api-docs'
+            docs: '/api-docs',
+            data: '/users/data'
         }
     })
 });
