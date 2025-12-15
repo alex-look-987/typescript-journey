@@ -1,7 +1,6 @@
 import app from './app';
 import dotenv from 'dotenv';
-import swaggerUi from 'swagger-ui-express';
-import { swaggerSpec } from './swagger';
+
 
 // Env variables
 dotenv.config()
@@ -10,8 +9,6 @@ dotenv.config()
 const PORT: string | number = process.env.PORT || 3000;
 const URL: string = `http://localhost:${PORT}`
 
-// Swagger UI
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 
 // Initialize Server
 app.listen(PORT, () => {

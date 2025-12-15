@@ -1,4 +1,6 @@
 import express from 'express';
+import { swaggerSpec } from './swagger';
+import swaggerUi from 'swagger-ui-express';
 import userRoutes from './routes/userRoutes';
 import { logger } from './middleware/logger';
 import { Application, Request, Response } from 'express';
@@ -10,7 +12,10 @@ app.use(logger);
 app.use(express.json());
 
 // Routes
-app.use(userRoutes);
+app.use('/users', userRoutes);
+
+// Swagger UI
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 
 // Main Endpoint
 app.get('/', (req: Request, res: Response) => {
@@ -18,7 +23,7 @@ app.get('/', (req: Request, res: Response) => {
         message: "API is up and running!",
         menu: {
             users: '/users',
-            docs: '/api-docs',
+            docs: '/docs',
             data: '/users/data'
         }
     })
